@@ -1,0 +1,57 @@
+# Git Install
+# Debian/Ubuntu
+# For the latest stable version for your release of Debian/Ubuntu
+
+# apt-get install git
+For Ubuntu, this PPA provides the latest stable upstream Git version
+
+# add-apt-repository ppa:git-core/ppa
+# apt update; apt install git
+
+
+# Configurando seu usuário do GitHub localmente
+
+git config --global user.name "Diego Lameira"
+git config --global user.email diegolameiratavares@gmail.com
+
+
+# Download do Projeto
+https://github.com/alura-cursos/allbooks/archive/refs/heads/aula-01.zip
+
+# Para instalar as dependências do seu projeto você pode rodar o comando a seguir em seu Terminal:
+# No WSL 
+
+
+ls -ln node_modules/@babel/parser/bin/
+
+mkdir -p ~/projetos
+cp -r /mnt/c/Treinamento/allbooks-aula-01 ~/projetos/
+cd ~/projetos/allbooks-aula-01
+rm -rf node_modules package-lock.json.bak
+
+#Para acessar os arquivos do projeto pelo Explorer do Windows, se precisar: \\wsl$\Ubuntu\home\diego\projetos
+
+
+
+sudo chown -R diego:diego ~/projetos/allbooks-aula-01
+rm -rf node_modules
+
+
+# sudo install tmux
+tmux new -s allbooks
+cd /home/diego/projetos/allbooks-aula-01
+sudo apt install npm
+npm install
+npm run start
+
+
+# Ctrl+b d -- Detach: sai sem matar a sessão 
+# tmux attach -t allbooks -- Reconecta na sessão
+#outro terminal ou browse
+curl http://localhost:3000
+
+
+find . -path ./node_modules -prune -o -type f -exec chmod 644 {} +
+ll
+
+code .
